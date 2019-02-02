@@ -12,8 +12,8 @@ pipelines:
           - node
         script: # Modify the commands below to build your repository.
           - npm install
-          - npm test
-          - npm build --prod
+          - npm lint
+          - npm run build --prod
           - mv ./build ./docs
           - git add ./docs
           - git remote add hosting git@github.com:csikosjanos/agility-test.git
