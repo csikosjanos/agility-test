@@ -14,8 +14,10 @@ pipelines:
           - npm install
           - npm run lint
           - npm run build:prod
+          - git remote add hosting git@github.com:csikosjanos/agility-test.git
+          - git pull hosting master
+          - rm -rf ./docs
           - mv ./dist/agility-test ./docs
           - git add ./docs
           - git commit -m "production release"
-          - git remote add hosting git@github.com:csikosjanos/agility-test.git
           - git push hosting master
